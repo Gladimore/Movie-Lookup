@@ -1,0 +1,389 @@
+:root {
+  --primary-color: #4CAF50;
+  --primary-dark: #45a049;
+  --text-color: #333;
+  --bg-color: #f0f0f0;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: var(--transition);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-color);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  position: relative;
+  transition: var(--transition);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+nav a:hover {
+  color: var(--primary-dark);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+#search-input {
+  width: 300px;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 25px 0 0 25px;
+  transition: var(--transition);
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+#search-button {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#search-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.results-container, #popular-movies, #details-container {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.results-container:hover, #popular-movies:hover, #details-container:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.result-item, .movie-item {
+  display: flex;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: var(--transition);
+}
+
+.result-item:hover, .movie-item:hover {
+  transform: translateY(-5px);
+}
+
+.result-item img, .movie-item img {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  margin-right: 25px;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.result-item:hover img, .movie-item:hover img {
+  transform: scale(1.05);
+}
+
+.result-info h2, .movie-item h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.result-info p, .movie-item p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#popular-movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.movie-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.movie-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+#details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#details-container img {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+#details-container h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+#details-container p {
+  margin: 10px 0;
+  max-width: 700px;
+  text-align: justify;
+}
+
+.details-header {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.details-poster {
+  width: 300px;
+  height: auto;
+  margin-right: 40px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.details-info {
+  flex: 1;
+}
+
+.overview {
+  font-style: italic;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.seasons-container {
+  margin-top: 40px;
+}
+
+.season-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+}
+
+.season-item h4 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+.load-episodes {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.load-episodes:hover {
+  background-color: var(--primary-dark);
+}
+
+.episodes-list {
+  margin-top: 20px;
+}
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.episode-item {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.episode-item:hover {
+  transform: translateY(-5px);
+}
+
+.episode-item h5 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.episode-item p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.copyable {
+  cursor: pointer;
+  color: var(--primary-color);
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.copyable:hover {
+  color: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  #search-input {
+    width: 200px;
+  }
+
+  #popular-movies {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .details-header {
+    flex-direction: column;
+  }
+
+  .details-poster {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .episodes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  .result-item, .movie-item {
+    border-bottom-color: #333;
+  }
+
+  .season-item, .episode-item {
+    background-color: #2a2a2a;
+  }
+
+  #search-input {
+    background-color: #2a2a2a;
+    color: var(--text-color);
+    border-color: #444;
+  }
+
+  #search-input:focus {
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.4);
+  }
+}

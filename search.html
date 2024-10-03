@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - TMDB Lookup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TMDB Movie and TV Show Lookup</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for movies or TV shows">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="results-container">
+            <div id="results"></div>
+            <div class="pagination">
+                <button id="prev-page" disabled>Previous</button>
+                <span id="current-page">1</span>
+                <button id="next-page">Next</button>
+            </div>
+        </div>
+    </div>
+    <script src="search.js"></script>
+</body>
+</html>
